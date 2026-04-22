@@ -1,0 +1,13 @@
+baseURL = "https://deveganeetclub.nl"
+title   = "deveganeetclub recepten"
+theme   = "cuisine-book"          # https://github.com/ntk148v/hugo-cuisine-book
+
+enableGitInfo = true
+
+[params]
+  author      = "Daniël Geerts"
+  description = "A collection of our favourite recipes, by deveganeetclub community"
+  logo        = "logo.jpg"        # place logo.png in /static/
+  repo        = "https://github.com/devdanielsun/deveganeetclub"
+  editpath    = "edit/master"     # enables 'Edit' links per recipe
+  newpath     = "new/master"      # enables 'Add recipe' links
