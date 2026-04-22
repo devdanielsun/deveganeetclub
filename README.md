@@ -1,9 +1,13 @@
 # deveganeetclub
-Vegan Recipe website, where deveganeetclub community are the creators and editors of the recipes.
+
+Vegan Recipe website, where deveganeetclub community are the authors of the recipes.
 
 # Stack
-Frontend is [Hugo](https://gohugo.io/)
-Admin panel is [Tina CMS](https://tina.io/)
+
+ - Frontend is [Hugo](https://gohugo.io/)
+ - Admin panel is [Tina CMS](https://tina.io/)
+
+# Description
 
 The recipes will be created and edited in Tina, which uses a Github service account to push the markdown files into this repo.
 That way the editors do not need a Github account. Tina handles the authentication through SSO, which for ex. could be your Google account.
