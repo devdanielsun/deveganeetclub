@@ -1,12 +1,3 @@
-# Shared fallback config.
-#
-# Theme selection is handled by the Makefile with:
-# - config/common.toml
-# - config/cookbook.toml
-# - config/cuisine-book.toml
-#
-# Use `make dev` or `make build` instead of calling `hugo` directly.
-
 baseURL = "https://deveganeetclub.nl"
 title = "deveganeetclub recepten"
 enableGitInfo = true
