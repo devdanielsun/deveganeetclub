@@ -1,19 +1,23 @@
-# Shared fallback config.
-#
-# Theme selection is handled by the Makefile with:
-# - config/common.toml
-# - config/cookbook.toml
-# - config/cuisine-book.toml
-#
-# Use `make dev` or `make build` instead of calling `hugo` directly.
-
 baseURL = "https://deveganeetclub.nl"
-title = "deveganeetclub recepten"
+title   = "deveganeetclub recepten"
+theme   = "cuisine-book"
+
 enableGitInfo = true
 
 [params]
-  author = "Daniël Geerts"
+  author      = "Daniël Geerts"
   description = "A collection of our favourite recipes, by deveganeetclub community"
-  repo = "https://github.com/devdanielsun/deveganeetclub"
-  editpath = "edit/master"
-  newpath = "new/master"
+  logo        = "logo.jpg"
+  repo        = "https://github.com/devdanielsun/deveganeetclub"
+  editpath    = "edit/master"
+  newpath     = "new/master"
+
+[[menu.main]]
+  name   = "Home"
+  url    = "/"
+  weight = 1
+
+[[menu.main]]
+  name   = "Over Ons"
+  url    = "/over-ons/"
+  weight = 2
