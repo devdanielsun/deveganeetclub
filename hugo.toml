@@ -18,6 +18,11 @@ enableGitInfo = true
   weight = 1
 
 [[menu.main]]
+  name   = "Recepten"
+  url    = "/recepten/"
+  weight = 2
+
+[[menu.main]]
   name   = "Over Ons"
   url    = "/over-ons/"
-  weight = 2
+  weight = 3
