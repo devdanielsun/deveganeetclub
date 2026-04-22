@@ -12,6 +12,9 @@ enableGitInfo = true
   editpath    = "edit/master"
   newpath     = "new/master"
 
+  [params.style]
+    backgroundImage = "background.png"
+
 [[menu.main]]
   name   = "Home"
   url    = "/"

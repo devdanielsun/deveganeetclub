@@ -1,5 +1,5 @@
 <nav
-  class="navbar is-transparent is-fixed-top"
+  class="navbar is-fixed-top"
   role="navigation"
   aria-label="main navigation"
 >
@@ -12,9 +12,23 @@
       {{ end }}
       <b class="title is-3">{{ $.Site.Title }}</b>
     </a>
+    {{ if .Site.Menus.main }}
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarMenu"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+    {{ end }}
   </div>
   {{ if .Site.Menus.main }}
-  <div class="navbar-menu is-active">
+  <div id="navbarMenu" class="navbar-menu">
+    <button class="navbar-drawer-close" aria-label="close menu">&#x2715;</button>
     <div class="navbar-end">
       {{ range .Site.Menus.main }}
       <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
@@ -23,3 +37,37 @@
   </div>
   {{ end }}
 </nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-burger');
+    const navbar = document.querySelector('.navbar');
+    if (!burger) return;
+
+    const target = document.getElementById(burger.dataset.target);
+
+    function openMenu() {
+      burger.classList.add('is-active');
+      target.classList.add('is-active');
+      navbar.classList.add('has-open-menu');
+    }
+
+    function closeMenu() {
+      burger.classList.remove('is-active');
+      target.classList.remove('is-active');
+      navbar.classList.remove('has-open-menu');
+    }
+
+    burger.addEventListener('click', () => {
+      target.classList.contains('is-active') ? closeMenu() : openMenu();
+    });
+
+    // Close button inside drawer
+    document.querySelector('.navbar-drawer-close')
+      ?.addEventListener('click', closeMenu);
+
+    // Close when clicking the backdrop
+    navbar.addEventListener('click', (e) => {
+      if (e.target === navbar) closeMenu();
+    });
+  });
+</script>
