@@ -1,0 +1,39 @@
+# backend:
+#   name: proxy
+#   proxy_url: http://localhost:8081/api/v1
+
+# Uncomment below (and remove proxy backend above) for production:
+backend:
+  name: github
+  repo: devdanielsun/deveganeetclub
+  branch: main
+  base_url: https://deveganeetclub.nl
+
+media_folder: /front-app/static/images
+public_folder: /images
+
+collections:
+  - name: recepten
+    label: Recepten
+    folder: /front-app/content/recepten
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Titel, name: title, widget: string }
+      - { label: Datum, name: date, widget: datetime }
+      - { label: Beschrijving, name: description, widget: text, required: false }
+      - { label: Uitgelichte afbeelding, name: featured_image, widget: image, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Categorieën, name: categories, widget: list, required: false }
+      - { label: Concept, name: draft, widget: boolean, default: false }
+      - { label: Inhoud, name: body, widget: markdown }
+
+  - name: pages
+    label: Pagina's
+    files:
+      - label: Over Ons
+        name: over-ons
+        file: /front-app/content/page/over-ons.md
+        fields:
+          - { label: Titel, name: title, widget: string }
+          - { label: Inhoud, name: body, widget: markdown }
